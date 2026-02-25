@@ -23,6 +23,6 @@ function fetchPromise() {
 
 //mock functions
 
-const mockCallback = jest.fn((x) => 42 + x);
+// const mockCallback = jest.fn((x) => 42 + x);
 
 module.exports = { sum, fn, fetch, fetchPromise };

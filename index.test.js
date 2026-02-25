@@ -1,16 +1,32 @@
 const { sum, fn, fetch, fetchPromise } = require("./index");
 
-//test('description',testfunction)
-test("adds 1+2 to equals to 3", () => {
-  expect(sum(1, 2)).toBe(3);
+describe("will test number cases", () => {
+  //test('description',testfunction)
+  test("adds 1+2 to equals to 3", () => {
+    expect(sum(1, 2)).toBe(3);
+  });
+
+  //Common Matchers
+  test("two plus two give four", () => {
+    expect(2 + 2).toBe(4);
+  });
 });
 
-//Using Matchers
+//beforeEach(()=>{
+//  console.log('will run before every text case')
+//})
 
-//Common Matchers
-test("two plus two give four", () => {
-  expect(2 + 2).toBe(4);
-});
+//afterEach(()=>{
+//  console.log("will run after every test case")
+//})
+
+//beforeAll(()=>{
+//  console.log("will run once first time after that test case run")
+//})
+
+//afterAll(()=>{
+//  console.log("will run once after all test cases executed")
+//})
 
 test("object assignments", () => {
   const data = { one: 1 };
