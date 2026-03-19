@@ -29,3 +29,12 @@ test("check truthy value",()=>{
 test('check falsy value',()=>{
     expect(b).toBeFalsy();
 })
+function check(){
+    throw new Error("Final Mistake");
+    
+}
+
+test('check error function',()=>{
+    expect(check).toThrow('Final Mistake');//if we change to lowercase will give error
+    expect(check).toThrow(/Final/i);
+})
