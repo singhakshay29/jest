@@ -13,7 +13,7 @@ function App() {
         <input type="text" value={name} className="bg-gray-300 rounded-3xl" onChange={(e)=>setName(e.target.value)}/>
         <button onClick={() => console.log("I m Clicked")}>Search here!</button>
         </div>
-        <Login/>
+        <Login data-testid='child'/>
         
       </div>
     </>

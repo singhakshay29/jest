@@ -33,8 +33,11 @@ const Login = () => {
         onSubmit={handleSubmit}
         className='flex flex-col m-5 gap-10 justify-center text-center'>
         <div className='flex gap-2 justify-between'>
-          <h4 className='text-white'>Email</h4>
+          <label htmlFor='email' className='text-white'>
+            Email
+          </label>
           <input
+            id='email'
             className='bg-white w-2xl'
             value={email}
             onChange={(e) => {
@@ -45,8 +48,11 @@ const Login = () => {
           />
         </div>
         <div className='flex gap-2 justify-between'>
-          <h4 className='text-white'>Password</h4>
+          <label htmlFor='password' className='text-white'>
+            Password
+          </label>
           <input
+            id='password'
             className='bg-white w-2xl'
             value={password}
             onChange={(e) => {

@@ -1,0 +1,63 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Testing React Application using Vitest > Snapshot for login component 1`] = `
+<DocumentFragment>
+  <div
+    class="m-5"
+  >
+    <h3>
+      Login Here
+    </h3>
+    <form
+      class="flex flex-col m-5 gap-10 justify-center text-center"
+    >
+      <div
+        class="flex gap-2 justify-between"
+      >
+        <label
+          class="text-white"
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          class="bg-white w-2xl"
+          id="email"
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        class="flex gap-2 justify-between"
+      >
+        <label
+          class="text-white"
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          class="bg-white w-2xl"
+          id="password"
+          type="password"
+          value=""
+        />
+      </div>
+      <div
+        class="flex justify-center gap-10"
+      >
+        <button
+          class="bg-blue-400 rounded-2xl text-white p-3 cursor-pointer"
+        >
+          Submit 
+        </button>
+        <button
+          class="bg-gray-500 rounded-2xl cursor-pointer text-white p-3"
+        >
+          Reset 
+        </button>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
