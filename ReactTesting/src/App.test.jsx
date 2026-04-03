@@ -37,31 +37,75 @@ describe("Testing React Application using Vitest", () => {
     const buttonList = await screen.findAllByRole("button");
     expect(buttonList).toHaveLength(2);
   });
-  
+
   //snapshot testing
-  test("Snapshot for login component",()=>{
-    const {asFragment}=render(<Login/>);
+  test("Snapshot for login component", () => {
+    const { asFragment } = render(<Login />);
     expect(asFragment()).toMatchSnapshot();
-  })
-  
-  test("Email Should accept email",()=>{
-    render(<Login/>);
-    
+  });
+
+  test("Email Should accept email", () => {
+    render(<Login />);
+
     const emailInput = screen.getByLabelText("Email");
     fireEvent.change(emailInput, {
       target: { value: "test@example.com" },
     });
     expect(emailInput.value).toBe("test@example.com");
-    
-   
+  });
+
+  test("Password Should Accept password", () => {
+    render(<Login />);
+    const passwordInput = screen.getByLabelText("Password");
+    fireEvent.change(passwordInput, {
+      target: { value: "123456A" },
+    });
+    expect(passwordInput.value).toBe("123456A");
+  });
+
+  test("Reset Button Should Reset form", () => {
+    render(<Login />);
+    const resetBtn = screen.getByTestId("reset");
+    const emailInput = screen.getByLabelText("Email");
+    fireEvent.change(emailInput, {
+      target: { value: "test@example.com" },
+    });
+    const passwordInput = screen.getByLabelText("Password");
+    fireEvent.change(passwordInput, {
+      target: { value: "123456A" },
+    });
+    fireEvent.click(resetBtn);
+    expect(emailInput.value).toMatch("");
+    expect(passwordInput.value).toBe("");
+  });
+  
+  test("should Be able to submit form for success case",()=>{
+    render(<Login/>);
+    const submtiBtn = screen.getByTestId('submit');
+    const emailInput = screen.getByLabelText("Email");
+    fireEvent.change(emailInput, {
+      target: { value: "test@example.com" },
+    });
+    const passwordInput = screen.getByLabelText("Password");
+    fireEvent.change(passwordInput, {
+      target: { value: "123456A" },
+    });
+    fireEvent.click(submtiBtn);
+    expect(emailInput.value).toMatch("");
   })
   
-  test("Password Should Accept password",()=>{
+  test("should Be able to submit form for error case",()=>{
     render(<Login/>);
+    const submtiBtn = screen.getByTestId('submit');
+    const emailInput = screen.getByLabelText("Email");
+    fireEvent.change(emailInput, {
+      target: { value: "testexample.com" },
+    });
     const passwordInput = screen.getByLabelText("Password");
-    fireEvent.change(passwordInput,{
-      target:{value:"123456A"}
-    })
-    expect(passwordInput.value).toBe("123456A");
+    fireEvent.change(passwordInput, {
+      target: { value: "123456A" },
+    });
+    fireEvent.click(submtiBtn);
+    expect(emailInput.value).toMatch("testexample.com");
   })
 });

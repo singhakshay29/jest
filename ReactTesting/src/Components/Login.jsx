@@ -64,10 +64,11 @@ const Login = () => {
         </div>
         {error && <p className='text-red-500'>{error}</p>}
         <div className='flex justify-center gap-10'>
-          <button className='bg-blue-400 rounded-2xl text-white p-3 cursor-pointer'>
+          <button data-testid='submit' className='bg-blue-400 rounded-2xl text-white p-3 cursor-pointer'>
             Submit{" "}
           </button>
           <button
+            data-testid='reset'
             onClick={() => handleReset()}
             className='bg-gray-500 rounded-2xl cursor-pointer text-white p-3'>
             Reset{" "}
